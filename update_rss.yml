@@ -1,0 +1,26 @@
+name: Update RSS Feed
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Every Monday at 12:00 UTC (change to daily if needed)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Generate RSS Feed
+        run: |
+          python rss_generator.py
+      - name: Commit and push RSS file
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add youtube_top_artists_us_weekly.xml
+          git commit -m "Update RSS feed"
+          git push
