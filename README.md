@@ -14,7 +14,7 @@ Useful for embedding on websites, RSS readers, or automation systems.
 Use the following raw URL for RSS readers or website embeds:
 
 ```
-https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/youtube_top_artists_us_weekly.xml
+https://raw.githubusercontent.com/moisescepeda/youtube-top-artists-feed/main/youtube_top_artists_us_weekly.xml
 ```
 
 Replace `moisescepeda` and `youtube-top-artists-feed` accordingly.
